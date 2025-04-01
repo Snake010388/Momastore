@@ -35,45 +35,4 @@ Sección de Sostenibilidad con información sobre materiales ecológicos.
 
 Blog con noticias y tendencias de moda sostenible.
 
-Newsletter y Redes Sociales en el footer.
-
-
-
-Instalación
-
-1. Clonar el repositorio:
-
-git clone https://github.com/tuusuario/momas-store.git
-
-
-2. Abrir el archivo index.html en el navegador.
-
-
-3. Personalizar los estilos en styles.css si es necesario.
-
-
-
-Próximas Mejoras
-
-Implementación de filtros inteligentes (talla, color, material).
-
-Integración con Shopify/WooCommerce.
-
-Chatbot para asistencia al cliente.
-
-Checkout optimizado en 3 pasos.
-
-
-Contribuciones
-
-Las contribuciones son bienvenidas. Puedes hacer un fork del repositorio y enviar un pull request con tus mejoras.
-
-Licencia
-
-Este proyecto se distribuye bajo la licencia MIT.
-
-
----
-
-¡Gracias por apoyar la moda sostenible con MOMA'S! 🌿✨
 
