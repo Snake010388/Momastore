@@ -1,0 +1,149 @@
+<!DOCTYPE html><html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOMA'S - Moda Sostenible</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        header, footer {
+            background-color: black;
+            color: white;
+        }
+        .btn {
+            background-color: fuchsia;
+            color: white;
+        }
+        .grid .categoria {
+            background-color: gold;
+            color: black;
+        }
+        .outfit-container {
+            background-color: fuchsia;
+            color: white;
+        }
+        input[type="email"], select {
+            background-color: fuchsia;
+            color: black;
+            border: none;
+            padding: 10px;
+        }
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+        .social-media img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="MOMA'S Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#coleccion">Colección</a></li>
+                <li><a href="#sostenibilidad">Sostenibilidad</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header><section id="hero">
+    <video autoplay loop muted>
+        <source src="hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+        <h1>Descubre la Colección Verano 2024</h1>
+        <a href="#coleccion" class="btn">Ver Colección</a>
+    </div>
+</section>
+
+<section id="categorias">
+    <h2>Categorías</h2>
+    <div class="grid">
+        <div class="categoria">Ropa Casual</div>
+        <div class="categoria">Accesorios Eco</div>
+        <div class="categoria">Edición Limitada</div>
+        <div class="categoria">Outlet</div>
+    </div>
+</section>
+
+<section id="productos">
+    <h2>Productos Destacados</h2>
+    <div class="productos-grid">
+        <!-- Productos dinámicos aquí -->
+    </div>
+</section>
+
+<section id="outfit-builder">
+    <h2>Combina tu Outfit</h2>
+    <p>Elige tus prendas favoritas y arma tu look en tiempo real.</p>
+    <div class="outfit-container">
+        <div class="outfit-selector">
+            <label for="top">Selecciona una prenda superior:</label>
+            <select id="top">
+                <option value="camiseta">Camiseta</option>
+                <option value="blusa">Blusa</option>
+            </select>
+            <label for="bottom">Selecciona una prenda inferior:</label>
+            <select id="bottom">
+                <option value="jeans">Jeans</option>
+                <option value="falda">Falda</option>
+            </select>
+            <label for="shoes">Selecciona calzado:</label>
+            <select id="shoes">
+                <option value="zapatillas">Zapatillas</option>
+                <option value="botas">Botas</option>
+            </select>
+        </div>
+        <div class="outfit-preview">
+            <p>Vista previa de tu outfit aquí.</p>
+        </div>
+    </div>
+</section>
+
+<section id="sostenibilidad">
+    <h2>Compromiso con la Sostenibilidad</h2>
+    <p>Hecho con algodón 100% orgánico</p>
+</section>
+
+<section id="blog">
+    <h2>Últimas Noticias</h2>
+    <div class="blog-posts">
+        <!-- Artículos dinámicos aquí -->
+    </div>
+</section>
+
+<footer>
+    <div class="newsletter">
+        <p>Suscríbete y obtén 10% de descuento</p>
+        <input type="email" placeholder="Tu correo electrónico">
+        <button>Suscribirse</button>
+    </div>
+    <div class="social-media">
+        <a href="https://instagram.com" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+        <a href="https://facebook.com" target="_blank">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        <a href="https://wa.me/" target="_blank">
+            <img src="whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="mailto:normar3011@gmail.com">
+            <img src="email.png" alt="Correo Electrónico">
+        </a>
+    </div>
+</footer>
+
+</body>
+</html>
