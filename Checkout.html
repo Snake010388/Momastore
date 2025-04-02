@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Moma</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="checkout.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Finalizar Compra</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Volver al catálogo</a></li>
+            </ul>
+        </nav>
+    </header><section id="resumen-carrito">
+    <h2>Tu Carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: <span id="total-carrito">$0</span></p>
+</section>
+
+<section id="datos-cliente">
+    <h2>Datos de Envío</h2>
+    <form id="form-compra">
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" required>
+        
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" required>
+        
+        <label for="metodo-pago">Método de Pago:</label>
+        <select id="metodo-pago" required>
+            <option value="tarjeta">Tarjeta de Crédito</option>
+            <option value="paypal">PayPal</option>
+        </select>
+        
+        <button type="submit">Confirmar Compra</button>
+    </form>
+</section>
+
+</body>
+</html>
