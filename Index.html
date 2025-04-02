@@ -13,7 +13,7 @@
             <ul>
                 <li><a href="#catalogo">Catálogo</a></li>
                 <li><a href="#outfit">Crea tu Outfit</a></li>
-                <li><a href="#carrito">Carrito</a></li>
+                <li><a href="checkout.html">Carrito</a></li>
             </ul>
         </nav>
     </header><section id="catalogo">
@@ -34,12 +34,6 @@
     <div id="outfit-preview"></div>
 </section>
 
-<section id="carrito">
-    <h2>Carrito de Compras</h2>
-    <ul id="lista-carrito"></ul>
-    <p>Total: <span id="total-carrito">$0</span></p>
-</section>
-
 <script>
     let carrito = [];
     let total = 0;
@@ -47,18 +41,8 @@
     function agregarAlCarrito(id, nombre, precio) {
         carrito.push({ id, nombre, precio });
         total += precio;
-        actualizarCarrito();
-    }
-
-    function actualizarCarrito() {
-        const listaCarrito = document.getElementById('lista-carrito');
-        listaCarrito.innerHTML = '';
-        carrito.forEach(item => {
-            let li = document.createElement('li');
-            li.textContent = `${item.nombre} - $${item.precio}`;
-            listaCarrito.appendChild(li);
-        });
-        document.getElementById('total-carrito').textContent = `$${total}`;
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        localStorage.setItem('total', total);
     }
 
     function seleccionarOutfit(id, imgSrc) {
