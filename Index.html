@@ -2,119 +2,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOMA'S - Moda Sostenible</title>
+    <title>Moma - Tienda de Ropa</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: white;
-            color: black;
-        }
-        header, footer {
-            background-color: black;
-            color: white;
-        }
-        .btn {
-            background-color: fuchsia;
-            color: white;
-        }
-        .grid .categoria {
-            background-color: gold;
-            color: black;
-        }
-        .outfit-container {
-            background-color: fuchsia;
-            color: white;
-        }
-    </style>
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <div class="logo">MOMA'S</div>
+        <h1>MOMA</h1>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#coleccion">Colección</a></li>
-                <li><a href="#sostenibilidad">Sostenibilidad</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#outfit">Crea tu Outfit</a></li>
+                <li><a href="#carrito">Carrito</a></li>
             </ul>
         </nav>
-    </header><section id="hero">
-    <video autoplay loop muted>
-        <source src="hero-video.mp4" type="video/mp4">
-    </video>
-    <div class="hero-text">
-        <h1>Descubre la Colección Verano 2024</h1>
-        <a href="#coleccion" class="btn">Ver Colección</a>
-    </div>
-</section>
-
-<section id="categorias">
-    <h2>Categorías</h2>
-    <div class="grid">
-        <div class="categoria">Ropa Casual</div>
-        <div class="categoria">Accesorios Eco</div>
-        <div class="categoria">Edición Limitada</div>
-        <div class="categoria">Outlet</div>
-    </div>
-</section>
-
-<section id="productos">
-    <h2>Productos Destacados</h2>
-    <div class="productos-grid">
-        <!-- Productos dinámicos aquí -->
-    </div>
-</section>
-
-<section id="outfit-builder">
-    <h2>Combina tu Outfit</h2>
-    <p>Elige tus prendas favoritas y arma tu look en tiempo real.</p>
-    <div class="outfit-container">
-        <div class="outfit-selector">
-            <label for="top">Selecciona una prenda superior:</label>
-            <select id="top">
-                <option value="camiseta">Camiseta</option>
-                <option value="blusa">Blusa</option>
-            </select>
-            <label for="bottom">Selecciona una prenda inferior:</label>
-            <select id="bottom">
-                <option value="jeans">Jeans</option>
-                <option value="falda">Falda</option>
-            </select>
-            <label for="shoes">Selecciona calzado:</label>
-            <select id="shoes">
-                <option value="zapatillas">Zapatillas</option>
-                <option value="botas">Botas</option>
-            </select>
+    </header><section id="catalogo">
+    <h2>Catálogo</h2>
+    <div class="productos">
+        <div class="producto" data-id="1">
+            <img src="img/producto1.jpg" alt="Producto 1">
+            <p>Camisa Elegante - $25</p>
+            <button onclick="agregarAlCarrito(1, 'Camisa Elegante', 25)">Agregar al carrito</button>
+            <button onclick="seleccionarOutfit(1, 'img/producto1.jpg')">Usar en outfit</button>
         </div>
-        <div class="outfit-preview">
-            <p>Vista previa de tu outfit aquí.</p>
-        </div>
+        <!-- Agregar más productos aquí -->
     </div>
 </section>
 
-<section id="sostenibilidad">
-    <h2>Compromiso con la Sostenibilidad</h2>
-    <p>Hecho con algodón 100% orgánico</p>
+<section id="outfit">
+    <h2>Crea tu Outfit</h2>
+    <div id="outfit-preview"></div>
 </section>
 
-<section id="blog">
-    <h2>Últimas Noticias</h2>
-    <div class="blog-posts">
-        <!-- Artículos dinámicos aquí -->
-    </div>
+<section id="carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: <span id="total-carrito">$0</span></p>
 </section>
 
-<footer>
-    <div class="newsletter">
-        <p>Suscríbete y obtén 10% de descuento</p>
-        <input type="email" placeholder="Tu correo electrónico">
-        <button>Suscribirse</button>
-    </div>
-    <div class="social-media">
-        <!-- Íconos de redes sociales -->
-    </div>
-</footer>
+<script>
+    let carrito = [];
+    let total = 0;
+
+    function agregarAlCarrito(id, nombre, precio) {
+        carrito.push({ id, nombre, precio });
+        total += precio;
+        actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+        const listaCarrito = document.getElementById('lista-carrito');
+        listaCarrito.innerHTML = '';
+        carrito.forEach(item => {
+            let li = document.createElement('li');
+            li.textContent = `${item.nombre} - $${item.precio}`;
+            listaCarrito.appendChild(li);
+        });
+        document.getElementById('total-carrito').textContent = `$${total}`;
+    }
+
+    function seleccionarOutfit(id, imgSrc) {
+        let outfitPreview = document.getElementById('outfit-preview');
+        let img = document.createElement('img');
+        img.src = imgSrc;
+        outfitPreview.appendChild(img);
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    header {
+        background: #333;
+        color: white;
+        padding: 10px;
+    }
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    .productos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .producto {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    #outfit-preview img {
+        width: 100px;
+        margin: 5px;
+    }
+</style>
 
 </body>
 </html>
